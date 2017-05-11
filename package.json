@@ -4,11 +4,13 @@
   "description": "Javascript Development Environment",
   "scripts": {
     "prestart": "babel-node tools/startMessage.js",
-    "start": "npm-run-all --parallel security-check open:src",
+    "start": "npm-run-all --parallel security-check open:src lint:watch",
     "open:src": "babel-node tools/srcServer.js",
     "security-check": "nsp check",
     "localtunnel": "lt --port 3000",
-    "share": "npm-run-all --parallel open:src localtunnel"
+    "share": "npm-run-all --parallel open:src localtunnel",
+    "lint": "esw webpack.config.*, src, tools --color",
+    "lint:watch": "npm run lint -- --watch"
   },
   "repository": {
     "type": "git",
