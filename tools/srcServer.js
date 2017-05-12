@@ -18,6 +18,13 @@ app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, '../src/index.html'));
 });
 
+app.get('/nodes', function(req, res){
+  res.json([
+    //insert server call here
+    {"id": 1, "node": 1}
+  ]);
+});
+
 app.listen(port, function(err) {
   if(err) {
      console.log(err);
