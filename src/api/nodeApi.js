@@ -8,7 +8,7 @@ export function getNodes() {
   return get('nodes');
 }
 
-export function deleteUser(id) {
+export function deleteNode(id) {
   return del(`nodes/${id}`);
 }
 

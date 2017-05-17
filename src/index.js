@@ -14,13 +14,13 @@ getNodes().then(result => {
 
   global.document.getElementById('nodes').innerHTML = nodesBody;
 
-  const deleteLinks = global.document.getElementsByClassName('deleteUser');
+  const deleteLinks = global.document.getElementsByClassName('deleteNode');
 
   Array.from(deleteLinks, link => {
     link.onclick = function(event) {
       const element = event.target;
       event.preventDefault();
-      deleteUser(element.attributes["data-id"].value);
+      deleteNode(element.attributes["data-id"].value);
       const row = element.parentNode.parentNode;
       row.parentNode.removeChild(row);
     };
