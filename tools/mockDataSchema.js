@@ -1,7 +1,7 @@
 export const schema = {
   "type": "object",
   "properties": {
-    "users": {
+    "nodes": {
       "type": "array",
       "minItems": 3,
       "maxItems": 5,
@@ -13,22 +13,15 @@ export const schema = {
             "unique": true,
             "minimum": 1
           },
-          "firstName": {
-            "type": "string",
-            "faker": "name.firstName"
-          },
-          "lastName": {
-            "type": "string",
-            "faker": "name.lastName"
-          },
-          "email": {
-            "type": "string",
-            "faker": "internet.email"
+          "node": {
+            "type": "number",
+            "unique": true,
+            "minimum": 1
           }
         },
-        "required": ["id", "firstName", "lastName", "email"]
+        "required": ["id", "node"]
       }
     }
   },
-  "required": ["users"]
+  "required": ["nodes"]
 };
